@@ -59,7 +59,7 @@ A task management API built with **Node.js**, **Express**, **TypeScript** and **
 {
   "success": true,
   "message": "Login successful",
-  "token": "jwt_token_here"
+  "token": "ghkkjbhbjkjjj....."
 }
 ```
 
