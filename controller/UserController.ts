@@ -19,7 +19,7 @@ export const userRegister = async (req: Request, res: Response) => {
 
         const userExists = await User.findOne({ email });
         if (userExists) {
-            return res.status(400).json({ success: false, message: "User registered successfully" });
+            return res.status(400).json({ success: false, message: "User already exists." });
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -69,6 +69,18 @@ export const userLogin = async (req: Request, res: Response) => {
 
     } catch (error) {
         console.log("userLogin error", error);
+        return res.status(500).json({ success: false, message: "Oops.! something went wrong." });
+    }
+};
+
+
+export const getUsers = async (req: Request, res: Response) => {
+    try {
+        let users = await User.find();
+        return res.status(200).json({ success: true, users });
+
+    } catch (error) {
+        console.log("getUsers error", error);
         return res.status(500).json({ success: false, message: "Oops.! something went wrong." });
     }
 };
