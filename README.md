@@ -65,6 +65,40 @@ A task management API built with **Node.js**, **Express**, **TypeScript** and **
 
 ---
 
+### 3 Get User list 
+**GET** `/user/`
+
+**Response:**
+
+```json
+{
+    "success": true,
+    "users": [
+         {
+            "_id": "68a7564b16668fc16bdb36db",
+            "name": "Some user",
+            "email": "hey@gmail.com",
+            "password": "$2b$10$/gFOT9NrjZQ3Ka/mYbPEAO4Njz.b/QbetB1RORugFuTIRBrOzf0qW",
+            "createdAt": "2025-08-21T17:24:27.480Z",
+            "updatedAt": "2025-08-21T17:24:27.480Z",
+            "__v": 0
+        },
+        {
+            "_id": "68ac444b1a1ca706b29a42b3",
+            "name": "Mukesh",
+            "email": "Mukesh@gmail.com",
+            "password": "$2b$10$ML4vS39vEQp10mWf8H25yONJB6CJNMTDoJtMYs8TfUy02PluBxYOy",
+            "createdAt": "2025-08-25T11:08:59.878Z",
+            "updatedAt": "2025-08-25T11:08:59.878Z",
+            "__v": 0
+        }
+    ]
+}
+```
+
+---
+
+
 ###  Note: All task routes require authentication.
 Pass token in headers:
 `Authorization: Bearer <token>`
